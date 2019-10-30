@@ -1,8 +1,12 @@
 def turn_count(board)
-player = {"X", "O"}
-  count = 0
-  while count<= player
-    puts "next move #{player[count]}"
-    count +=1
-end
-end 
+  counter = 0
+     board.each do |spaces|
+        if spaces == "X" || spaces == "O"
+           counter += 1
+        end
+     end
+     counter
+  end
+  def current_player(board)
+     turn_count(board) % 2 == 0 ? "X" : "O"
+  end
